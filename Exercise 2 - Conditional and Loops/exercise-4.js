@@ -1,6 +1,9 @@
 function nicknameMap(persons) {
-  let nick = persons.map((el) => Object.values(el));
-  return nick
+  let nick = [];
+  for (let i = 0; i < persons.length; i++){
+    nick.push(Object.values(persons[i]).join('-'));
+  }
+  return nick;
 }
 
 
