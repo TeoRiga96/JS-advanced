@@ -1,10 +1,12 @@
 function uncompletedNotes(notes) {
+  let notdo = [];
   notes.forEach((el) => {
     let todo = el.todos.filter((i) => {
       return i.done == false;
-    });
-    console.log(todo);
-  });
+    })
+    notdo.push(...todo)
+  })
+  return notdo
 }
 
 const notes = [
@@ -57,6 +59,6 @@ const notes = [
   },
 ];
 
-uncompletedNotes(notes);
-
+const result = uncompletedNotes(notes);
+console.log(result)
 
