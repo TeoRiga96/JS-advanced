@@ -4,7 +4,7 @@ function uncompletedNotes(notes) {
     let todo = el.todos.filter((i) => {
       return i.done == false;
     })
-    notdo.push(...todo)
+    notdo.push(...todo)//spread operator 
   })
   return notdo
 }
