@@ -1,4 +1,9 @@
 class Person {
+  firstName = "";
+  lastName = "";
+  static fromObject(obj){
+   return obj;
+  }
   constructor(firstName, lastName) {
     this.firstName = firstName;
     this.lastName = lastName;
@@ -12,3 +17,4 @@ const obj = {
 
 const person = Person.fromObject(obj);
 console.log(person.firstName + " " + person.lastName);
+
