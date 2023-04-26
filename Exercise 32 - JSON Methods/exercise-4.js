@@ -3,6 +3,9 @@ const person = {
   firstName: 'Mario',
   lastName: 'Rossi',
   age: 25,
+  toJSON(){
+    return {id:1, age:25}
+  }
 };
 
 const json = JSON.stringify(person);
