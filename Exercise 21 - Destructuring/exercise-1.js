@@ -6,6 +6,7 @@ console.log('Before swap: ', num1, num2); // Before swap: 10 20
 // let temp = num2;
 // num2 = num1;
 // num1 = temp;
-[num1, num2] = [20, 10];
+let swap = [num1, num2];
+[num2, num1] = swap
 
 console.log('After swap: ', num1, num2); // After swap: 20 10
