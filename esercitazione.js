@@ -30,7 +30,7 @@ class Class1 {
     // }
 }
    
-let stud1 = new Class1(5)
+let stud1 = new Class1("")
 stud1.fetchUrl("https://api.api-ninjas.com/v1/randomuser") 
 setTimeout(() => console.log(stud1.getStudents), 3000) 
 
