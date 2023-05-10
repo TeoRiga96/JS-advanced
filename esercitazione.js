@@ -6,7 +6,7 @@ class Class1 {
         this.students = students
       
     }
-    get newStudents(){
+    get getStudents(){
         return this.students
     }
     set newStudents(val){
@@ -14,19 +14,25 @@ class Class1 {
     }
 
     async fetchUrl(url){
-        let risp = await fetch(url, {
-            headers: { "X-Api-Key": "rxll5ONMoj4N9oaYkjPRvw==mNIx2udRZoGzoSBg" }})
-        let rispJson = await risp.json()
-        
-        return  rispJson;
+       const risp = await fetch(url, {
+        headers: { "X-Api-Key": "rxll5ONMoj4N9oaYkjPRvw==mNIx2udRZoGzoSBg" }})
+        const rispJson = await risp.json();
+        return  this.newStudents = rispJson.username;
     }
 
+    // fetchUrl(url){
+    //     fetch(url,  {
+    //     headers: { "X-Api-Key": "rxll5ONMoj4N9oaYkjPRvw==mNIx2udRZoGzoSBg" }})
+    //     .then((risp) => risp.json())
+    //     .then((toJson) => (toJson.username))
+    //     .then((username) => (this.newStudents = username))
+    //     .catch((err) => console.log(err))
+    // }
 }
    
-let stud1 = new Class1([], 0)
-let x = stud1.fetchUrl("https://api.api-ninjas.com/v1/randomuser")
-stud1.newStudents = x;
-console.log(stud1.newStudents)
+let stud1 = new Class1(5)
+stud1.fetchUrl("https://api.api-ninjas.com/v1/randomuser") 
+setTimeout(() => console.log(stud1.getStudents), 3000) 
 
 
 
