@@ -34,7 +34,7 @@ class Class1 {
    
 let stud1 = new Class1("Paolo")
 stud1.fetchUrl("https://api.api-ninjas.com/v1/randomuser") 
- 
+
 
 
 
