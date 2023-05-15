@@ -1,9 +1,20 @@
 <html>
   <body>
-    <div id="container" style="display: flex; align-items: center;"></div>
+    <div id="container" style="display: flex; align-items: center;">
+      <ul id="todo-list"></ul>
+    </div>
   </body>
 </html>
 
 <script>
-  // code here
+  async function getList(url){
+    const risp = await fetch(url);
+    const jsonRisp = await risp.json();
+    const title = jsonRisp.map((el) =>{
+      const li = document.createElement('li')
+      li.innerText = el.title 
+      document.getElementById('todo-list').appendChild(li)
+    }) ;
+  }
+  getList('https://jsonplaceholder.typicode.com/todos')
 </script>
