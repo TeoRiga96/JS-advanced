@@ -5,5 +5,21 @@
 </html>
 
 <script>
-  // code here
+ async function getList(url){
+    const risp = await fetch(url);
+    const jsonRisp = await risp.json();
+    
+    //creazione h2 + titolo all'interno
+    const title = document.createElement('h2')
+    title.textContent = jsonRisp.title
+    document.getElementById('container').appendChild(title)
+
+    //creazione checkbox
+    const checkbox = document.createElement('input')
+    checkbox.type = 'checkbox'
+    checkbox.checked = jsonRisp.completed 
+    document.getElementById('container').appendChild(checkbox)
+
+  }
+  getList('https://jsonplaceholder.typicode.com/todos/4')
 </script>
