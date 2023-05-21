@@ -22,7 +22,7 @@
 <script>
   let form = document.querySelector('form')
   let formChild = form.children //devo prendere i <div> figli di form
-  for(let i of formChild){ //perchè forEach e fori
+  for(let i of formChild){ //perchè forEach e forin non funzionano ? 
     console.log(i.children[0].textContent + i.children[1].value)
   }
   // ragionamento per prendere test label + valore del campo di first name
