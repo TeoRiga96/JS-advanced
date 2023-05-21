@@ -18,5 +18,26 @@
 </html>
 
 <script>
-  // code here
+  const form = document.querySelector('form');
+  
+  form.addEventListener('submit', function(e) { //-> cos'è la e?
+    e.preventDefault();
+    // il dato da inviare è un oggetto che ha le stesse caratteristiche del mio form
+    const newForm = new FormData(form)
+    
+  async function getPost(url){
+      const risp = await fetch(url, {
+        method: "POST",
+        body: newForm
+      });
+      const rispJson = await risp.json();
+      console.log(rispJson) 
+    }
+    getPost('https://jsonplaceholder.typicode.com/posts');
+  })
+  
+  
+  
+
+
 </script>
