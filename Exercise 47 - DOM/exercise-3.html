@@ -20,5 +20,13 @@
 </html>
 
 <script>
-  // code here
+  let form = document.querySelector('form')
+  let formChild = form.children //devo prendere i <div> figli di form
+  for(let i of formChild){ //perchè forEach e fori
+    console.log(i.children[0].textContent + i.children[1].value)
+  }
+  // ragionamento per prendere test label + valore del campo di first name
+    // let childForm = form.children[0] -> entro nel primo div figlio di form
+    // let inChild = childForm.children[0].textContent + childForm.children[1].value 
+ 
 </script>
